@@ -5,23 +5,17 @@ Omeka is a free, flexible, and open source web-publishing platform for the displ
 
 1. Create an account at http://openshift.redhat.com/
  
-1. Create a PHP application
+1. Create a PHP application with mysql support
 
     ```
-    rhc app create -a omeka -t php-5.3
+    rhc app create omeka php-5.3  mysql-5.1
     ```
-
-1. Add mysql support to your application
-     
-     ```
-     rhc cartridge add -a omeka -c mysql-5.1
-     ```
 
 1. Add this upstream Omeka quickstart repository
      
      ```
      cd omeka
-     git remote add upstream -m master git://github.com/loudWhale/omeka-quickstart.git
+     git remote add upstream -m master https://github.com/emfccsti/omeka-quickstart.git 
      git pull -s recursive -X theirs upstream master
      ```
 1. Push the quickstart code to your Openshift application
